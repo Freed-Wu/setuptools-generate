@@ -67,7 +67,7 @@ template_path = "templates"
 exclude_lines = [
   "if TYPE_CHECKING:",
   "if __name__ == .__main__.:",
-  "import tomli as tomllib",
+  "\\s*import tomli as tomllib",
 ]
 
 [tool.bandit.assert_used]
