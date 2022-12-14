@@ -111,13 +111,13 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
         with:
-          path: dist
-          path: build/resources
+          path: dist/*
+          path: build/resources/*
       - uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: dist
-          path: build/resources
+          files: dist/*
+          path: build/resources/*
       - uses: pypa/gh-action-pypi-publish@release/v1
         if: startsWith(github.ref, 'refs/tags/') && runner.os == 'Linux'
         with:

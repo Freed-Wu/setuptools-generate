@@ -79,7 +79,6 @@ Example projects:
 
 - [demo for click](https://github.com/Freed-Wu/setuptools-generate/tree/main/tests/click/src)
 - [demo for shtab](https://github.com/Freed-Wu/setuptools-generate/tree/main/tests/shtab/src)
-- [help2man](https://github.com/Freed-Wu/help2man)
 - [translate-shell](https://github.com/Freed-Wu/translate-shell)
 
 See [document](https://setuptools-generate.readthedocs.io) to know more.
