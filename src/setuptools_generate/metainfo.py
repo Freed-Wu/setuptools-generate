@@ -10,7 +10,7 @@ from jinja2.exceptions import UndefinedError
 
 logger = logging.getLogger(__name__)
 TEMPLATE_FILE = str(
-    Path(__file__).absolute().parent / "assets" / "templates" / "metainfo.py"
+    Path(__file__).absolute().parent / "assets" / "jinja2" / "metainfo.py.j2"
 )
 
 
