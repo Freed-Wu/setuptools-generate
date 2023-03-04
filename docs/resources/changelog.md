@@ -3,8 +3,8 @@
 Sometimes, you have a changelog like this: (See
 [frinyvonnick/gitmoji-changelog](https://github.com/frinyvonnick/gitmoji-changelog))
 
-````{eval-sh}
-```markdown
+````markdown
+```{eval-sh}
 cd ..
 cat tests/changelog/CHANGELOG.md
 ```
@@ -12,8 +12,8 @@ cat tests/changelog/CHANGELOG.md
 
 This tool can generate a `build/CHANGELOG.md`.
 
-````{eval-sh}
-```markdown
+````markdown
+```{eval-sh}
 cd ..
 cat tests/changelog/test/CHANGELOG.md
 ```
