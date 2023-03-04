@@ -13,6 +13,15 @@ resources/*
 ---
 hidden:
 glob:
+caption: Misc
+---
+misc/*
+```
+
+```{toctree}
+---
+hidden:
+glob:
 caption: API
 ---
 api/*

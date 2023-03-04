@@ -72,7 +72,7 @@ repos:
         additional_dependencies:
           - markdown-it-texmath@0.9.1
   - repo: https://github.com/Freed-Wu/pre-commit-hooks
-    rev: 0.0.7
+    rev: 0.0.8
     hooks:
       - id: update-pyproject.toml
       - id: update-CITATION.cff
