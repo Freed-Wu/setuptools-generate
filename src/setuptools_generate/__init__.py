@@ -44,14 +44,20 @@ def generate(distribution: Distribution | None = None) -> None:
             "no [tool.setuptools-generate.write-to] in pyproject.toml, "
             "skip writing metainfo!"
         )
+    cwd = os.getcwd()
+    build = os.path.join(cwd, "build")
+    resources = os.path.join(build, "resources")
+    os.makedirs(resources, exist_ok=True)
+    fname = "CHANGELOG.md"
+    if os.path.exists(fname):
+        from ._markdown_it import generate_changelog
+
+        generate_changelog(build, fname)
     try:
         completions: dict[str, str] = data["project"]["scripts"]
     except KeyError:
         logger.warning("No [project.scripts] in your pyproject.toml!")
         return
-    cwd = os.getcwd()
-    resources = os.path.join(os.path.join(cwd, "build"), "resources")
-    os.makedirs(resources, exist_ok=True)
     sys.path.insert(0, cwd)
     sys.path.insert(0, os.path.join(cwd, "src"))
     for prog, path in completions.items():

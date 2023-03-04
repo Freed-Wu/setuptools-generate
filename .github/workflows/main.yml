@@ -22,8 +22,7 @@ jobs:
         runs-on:
           - ubuntu-latest
           - macos-latest
-          # click cannot find bash in Windows
-          # - windows-latest
+          - windows-latest
     runs-on: ${{ matrix.runs-on }}
     steps:
       - uses: actions/checkout@v3

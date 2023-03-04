@@ -1,4 +1,4 @@
-# Metainfo
+# Generate Metainfo
 
 This tool also support generating some metainfo to a file like
 

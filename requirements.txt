@@ -2,6 +2,7 @@
 
 click
 help2man
+markdown-it-py
 setuptools
 shtab
 tomli>=1.0.0; python_version < '3.11'

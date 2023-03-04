@@ -1,7 +1,10 @@
 """Test click."""
 import os
 import shutil
+import sys
 from pathlib import Path
+
+import pytest
 
 from setuptools_generate import generate  # type: ignore
 
@@ -23,6 +26,10 @@ def copy(filename: str, target: str = ".") -> None:
 class Test:
     """Test."""
 
+    #
+    @pytest.mark.skipif(
+        sys.platform == "win32", reason="click cannot find bash in Windows"
+    )
     def test_click(self, tmp_path: Path) -> None:
         """Test click. Check current directory.
 
