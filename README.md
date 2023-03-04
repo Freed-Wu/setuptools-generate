@@ -36,7 +36,7 @@
 [![pypi/implementation](https://shields.io/pypi/implementation/setuptools-generate)](https://pypi.org/project/setuptools-generate/#files)
 [![pypi/pyversions](https://shields.io/pypi/pyversions/setuptools-generate)](https://pypi.org/project/setuptools-generate/#files)
 
-Generate shell completions and man page when a python package is building.
+Generate shell completions and man page when building a python package.
 
 ## Usage
 

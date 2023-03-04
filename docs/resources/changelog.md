@@ -12,7 +12,7 @@ cat tests/changelog/CHANGELOG.md
 
 This tool can generate a `build/CHANGELOG.md`.
 
-````markdown
+````html
 ```{eval-sh}
 cd ..
 cat tests/changelog/test/CHANGELOG.md
