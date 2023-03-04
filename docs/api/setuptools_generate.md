@@ -1,7 +1,8 @@
-# setuptools_generate
+# setuptools-generate
 
 ````{eval-rst}
 ```{eval-sh}
-generate-api.md.sh '' -maxdepth 1
+cd ..
+scripts/generate-api.md.pl src/*/*.py
 ```
 ````

@@ -45,6 +45,8 @@ jobs:
         run: |
           pip install -e '.[dev]'
       - name: Test
+        env:
+          SKIP: make
         run: |
           pytest --cov
           pre-commit run -a
@@ -77,9 +79,16 @@ jobs:
           path: |
             dist
             build/resources
+      - name: Get changelog
+        if: startsWith(github.ref, 'refs/tags/')
+        run: >
+          mkdir -p build;
+          perl -0777 -ne'/## .*?\n\n(.*?)\n\n\n/s; print $1' CHANGELOG.md >
+          build/CHANGELOG.md
       - uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
+          body_path: build/CHANGELOG.md
           files: |
             dist
             build/resources

@@ -5,6 +5,6 @@ authors:
   - family-names: Wu
     given-names: Zhenyu
     orcid: https://orcid.org/0000-0001-6478-9993
-title: "setuptools-generate: Generate shell completions when a python package is building."
+title: "setuptools-generate: Generate shell completions and man page."
 date-released: 2022-12-03
 url: "https://github.com/Freed-Wu/setuptools-generate"

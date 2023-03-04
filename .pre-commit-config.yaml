@@ -1,4 +1,6 @@
 ---
+exclude: ^CHANGELOG\.md$
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -44,9 +46,6 @@ repos:
     rev: 3.0.0
     hooks:
       - id: check-mailmap
-      - id: shellcheck
-      - id: shfmt
-        exclude: .*\.zsh$
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.29.0
     hooks:
@@ -86,7 +85,7 @@ repos:
         additional_dependencies:
           - tomli
   - repo: https://github.com/kumaraditya303/mirrors-pyright
-    rev: v1.1.294
+    rev: v1.1.295
     hooks:
       - id: pyright
   - repo: https://github.com/PyCQA/bandit
@@ -97,9 +96,16 @@ repos:
           - -cpyproject.toml
         additional_dependencies:
           - toml
+  - repo: https://github.com/Freed-Wu/pre-commit-hooks
+    rev: 0.0.3
+    hooks:
+      - id: update-pyproject.toml
+      - id: update-CITATION.cff
+      - id: update-package.json
 
 ci:
   skip:
+    - make
     - shellcheck
     - shfmt
     - pyright

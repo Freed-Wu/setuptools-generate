@@ -2,7 +2,7 @@
 import os
 from pathlib import Path
 
-from setuptools_generate import generate
+from setuptools_generate import generate  # type: ignore
 
 
 class Test:

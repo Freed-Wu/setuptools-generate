@@ -3,7 +3,7 @@ import os
 import shutil
 from pathlib import Path
 
-from setuptools_generate import generate
+from setuptools_generate import generate  # type: ignore
 
 HERE = os.path.dirname(__file__)
 
