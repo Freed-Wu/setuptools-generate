@@ -1,12 +1,14 @@
 """Test metainfo."""
 import os
 import shutil
+from datetime import datetime
 from pathlib import Path
 
 import pytest
 
 from setuptools_generate import generate  # type: ignore
 
+now = datetime.now
 HERE = os.path.dirname(__file__)
 
 
@@ -54,7 +56,7 @@ class Test:
         with open(
             os.path.join(os.path.join(HERE, "no_template"), "_metainfo.py")
         ) as f:
-            expected = f.read().strip()
+            expected = f.read().strip().replace("2022", now().strftime("%Y"))
         assert expected == rst
 
     def test_incorrect_template_metainfo(self, tmp_path: Path) -> None:
@@ -74,7 +76,7 @@ class Test:
                 os.path.join(HERE, "incorrect_template"), "_metainfo.py"
             )
         ) as f:
-            expected = f.read().strip()
+            expected = f.read().strip().replace("2022", now().strftime("%Y"))
         assert expected == rst
 
     def test_template_file_metainfo(self, tmp_path: Path) -> None:
@@ -93,7 +95,7 @@ class Test:
         with open(
             os.path.join(os.path.join(HERE, "template_file"), "_metainfo.py")
         ) as f:
-            expected = f.read().strip()
+            expected = f.read().strip().replace("2022", now().strftime("%Y"))
         assert expected == rst
 
     def test_template_text_metainfo(self, tmp_path: Path) -> None:
@@ -111,5 +113,5 @@ class Test:
         with open(
             os.path.join(os.path.join(HERE, "template_text"), "_metainfo.py")
         ) as f:
-            expected = f.read().strip()
+            expected = f.read().strip().replace("2022", now().strftime("%Y"))
         assert expected == rst
