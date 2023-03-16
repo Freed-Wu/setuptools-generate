@@ -21,8 +21,12 @@ def generate_complete(command: BaseCommand, prog: str, resources: str) -> None:
     shells = {"bash": prog, "zsh": "_" + prog, "fish": prog + ".fish"}
     for shell, filename in shells.items():
         comp_cls = get_completion_class(shell)
-        content = comp_cls(  # type: ignore
-            command, {}, prog, f"_{prog.upper()}_COMPLETE"
-        ).source()
-        with open(os.path.join(resources, filename), "w") as f:
+        content = (
+            comp_cls(  # type: ignore
+                command, {}, prog, f"_{prog.upper()}_COMPLETE"
+            )
+            .source()
+            .replace("\r\n", "\n")
+        )
+        with open(os.path.join(resources, filename), "w", newline="") as f:
             f.write(content)

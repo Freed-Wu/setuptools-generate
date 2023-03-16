@@ -11,8 +11,13 @@
   workflow_dispatch:
 
 env:
+  PYTHONUTF8: "1"
   python-version: 3.x
   cache: pip
+
+defaults:
+  run:
+    shell: bash
 
 jobs:
   test:
@@ -30,28 +35,18 @@ jobs:
         with:
           python-version: ${{ env.python-version }}
           cache: ${{ env.cache }}
-      - name: Install dependencies for Linux
-        if: runner.os == 'Linux'
-        run: |
-          sudo apt update
-          sudo apt install shfmt
+      # macOS's default bash is too old
       - name: Install dependencies for macOS
         if: runner.os == 'macOS'
         run: |
           brew update
-          brew install shellcheck shfmt bash
+          brew install bash
       - name: Install dependencies
         run: |
           pip install -e '.[dev]'
-      - name: Test for Linux and macOS
-        if: runner.os != 'Windows'
+      - name: Test
         run: |
           pytest --cov .
-          pre-commit run -a
-      - name: Test for Windows
-        if: runner.os == 'Windows'
-        run: |
-          pytest --cov
       - uses: codecov/codecov-action@v3
   build:
     needs: test

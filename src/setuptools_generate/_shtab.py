@@ -26,10 +26,10 @@ def generate_complete(function: Callable, prog: str, resources: str) -> None:
     argv = sys.argv
     for shell, filename in shells.items():
         sys.argv = [prog, "--print-completion", shell]
-        content = get_stdout(function)
+        content = get_stdout(function).replace("\r\n", "\n")
         if content == "":
             logger.error("No --print-completion found!")
             return
-        with open(os.path.join(resources, filename), "w") as f:
+        with open(os.path.join(resources, filename), "w", newline="") as f:
             f.write(content)
     sys.argv = argv
