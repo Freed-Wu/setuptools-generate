@@ -11,7 +11,12 @@ from click import BaseCommand
 from setuptools import Distribution
 
 from ._help2man import generate_man
-from ._version import __version__, __version_tuple__  # type: ignore
+
+try:
+    from ._version import __version__, __version_tuple__  # type: ignore
+except ImportError:
+    __version__ = "rolling"
+    __version_tuple__ = (0, 0, 0, __version__, "")
 
 try:
     import tomllib  # type: ignore

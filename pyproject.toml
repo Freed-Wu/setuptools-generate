@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools >= 45", "setuptools_scm[toml] >= 6.2"]
+requires = ["setuptools_scm[toml] >= 6.2"]
 build-backend = "setuptools.build_meta"
 
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
@@ -36,6 +36,9 @@ Source = "https://github.com/Freed-Wu/setuptools-generate"
 
 [project.entry-points."setuptools.finalize_distribution_options"]
 generate = "setuptools_generate:generate"
+
+[tool.setuptools.package-data]
+setuptools_generate = ["py.typed", "assets/**"]
 
 [tool.setuptools_scm]
 write_to = "src/setuptools_generate/_version.py"
