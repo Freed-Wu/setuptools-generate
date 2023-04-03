@@ -1,10 +1,11 @@
 {
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   inputs.flake-utils.url = "github:numtide/flake-utils";
-  inputs.help2man.url = "github:Freed-Wu/help2man";
-  outputs = { self, nixpkgs, flake-utils, help2man }:
+  inputs.python-help2man.url = "github:Freed-Wu/help2man";
+  outputs = { self, nixpkgs, flake-utils, python-help2man }:
     flake-utils.lib.eachDefaultSystem
       (system:
+        let help2man = python-help2man.packages.${system}.default; in
         with nixpkgs.legacyPackages.${system};
         with python3.pkgs;
         {
@@ -18,7 +19,7 @@
             propagatedBuildInputs = [
               setuptools
               click
-              help2man.packages.${system}.default
+              help2man
               markdown-it-py
               setuptools
               shtab
