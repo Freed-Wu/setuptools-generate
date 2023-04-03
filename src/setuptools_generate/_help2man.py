@@ -32,7 +32,7 @@ def generate_man(
     versionstr = get_stdout(function)
     sys.argv = argv
     man = help2man(helpstr, versionstr)
-    with open(os.path.join(resources, prog + ".1.gz"), "w") as f:
+    with open(os.path.join(resources, prog + ".1"), "w") as f:
         f.write(man)
     doc = help2man(helpstr, versionstr, template=TEMPLATES["markdown"])
     with open(os.path.join(resources, prog + ".1.md"), "w") as f:
