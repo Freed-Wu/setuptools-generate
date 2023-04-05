@@ -1,7 +1,7 @@
 # Changelog
 
-<a name="next"></a>
-## next
+<a name="0.0.5"></a>
+## 0.0.5 (2023-04-05)
 
 ### Added
 
@@ -17,6 +17,7 @@
 
 ### Miscellaneous
 
+- 📝 Update README.md [[7107dca](https://github.com/Freed-Wu/setuptools-generate/commit/7107dca1e0f14086ca187c64663003ccdd65a891)]
 - 📝 Add some sphinx extensions [[cca6ca4](https://github.com/Freed-Wu/setuptools-generate/commit/cca6ca4e9b1b500b3b349b81f877932acaa59785)]
 - 📦 Update flake.nix [[a1f0fd6](https://github.com/Freed-Wu/setuptools-generate/commit/a1f0fd66a2f9769e3cb07e8cb7299f410bd44c85)]
 - 📦 Support nix [[92a25ee](https://github.com/Freed-Wu/setuptools-generate/commit/92a25ee6d7ca0fb6005b9f4483d3a04602bdf7c7)]

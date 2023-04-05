@@ -61,15 +61,16 @@ Build your package:
 python -m build
 ```
 
-See your `build/resources`:
+See your `sdist`:
 
 ```console
-$ tree build/resources
- build/resources
+$ tree sdist
+ sdist
+├──  _demo  # zsh completion script
+├──  demo  # bash completion script
 ├──  demo-0.0.1-py3-none-any.whl  # wheel file
 ├──  demo-0.0.1.tar.gz  # source distribution file
 ├──  demo.1  # man page
-├──  demo.1.md  # markdown converted from the man page for document
 └──  demo.fish  # fish completion script
 ```
 

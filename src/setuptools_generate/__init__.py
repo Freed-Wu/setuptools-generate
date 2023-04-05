@@ -51,8 +51,9 @@ def generate(distribution: Distribution | None = None) -> None:
         )
     cwd = os.getcwd()
     build = os.path.join(cwd, "build")
-    resources = os.path.join(build, "resources")
-    os.makedirs(resources, exist_ok=True)
+    sdist = os.path.join(cwd, "sdist")
+    os.makedirs(build, exist_ok=True)
+    os.makedirs(sdist, exist_ok=True)
     fname = "CHANGELOG.md"
     if os.path.exists(fname):
         from ._markdown_it import generate_changelog
@@ -77,7 +78,7 @@ def generate(distribution: Distribution | None = None) -> None:
             logger.error(path + " cannot be called!")
             return
 
-        generate_complete(function, prog, resources)  # type: ignore
-        generate_man(function, prog, resources, data)
+        generate_complete(function, prog, sdist)  # type: ignore
+        generate_man(function, prog, sdist, build)
     sys.path.pop(0)
     sys.path.pop(0)

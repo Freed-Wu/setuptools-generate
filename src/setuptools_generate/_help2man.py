@@ -11,7 +11,7 @@ from .utils import get_stdout
 
 
 def generate_man(
-    function: Callable, prog: str, resources: str, data: dict
+    function: Callable, prog: str, sdist: str, build: str
 ) -> None:
     """Generate man.
 
@@ -19,10 +19,10 @@ def generate_man(
     :type function: Callable
     :param prog:
     :type prog: str
-    :param resources:
-    :type resources: str
-    :param data:
-    :type data: dict
+    :param sdist:
+    :type sdist: str
+    :param build:
+    :type build: str
     :rtype: None
     """
     argv = sys.argv
@@ -32,8 +32,8 @@ def generate_man(
     versionstr = get_stdout(function)
     sys.argv = argv
     man = help2man(helpstr, versionstr)
-    with open(os.path.join(resources, prog + ".1"), "w") as f:
+    with open(os.path.join(sdist, prog + ".1"), "w") as f:
         f.write(man)
     doc = help2man(helpstr, versionstr, template=TEMPLATES["markdown"])
-    with open(os.path.join(resources, prog + ".1.md"), "w") as f:
+    with open(os.path.join(build, prog + ".md"), "w") as f:
         f.write(doc)

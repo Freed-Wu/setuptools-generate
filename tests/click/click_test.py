@@ -41,7 +41,7 @@ class Test:
         copy("src/pyproject.toml")
         copy("src/demo_click.py")
         generate()
-        for file in list(os.walk("build/resources"))[0][-1]:
-            with open(os.path.join("build/resources", file)) as f:
+        for file in list(os.walk("sdist"))[0][-1]:
+            with open(os.path.join("sdist", file)) as f:
                 rst = f.read()
             assert rst != ""

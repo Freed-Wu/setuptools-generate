@@ -28,7 +28,7 @@ So you can
       body_path: build/CHANGELOG.md
       files: |
         dist
-        build/resources
+        sdist
 ```
 
 More information can be seen in
