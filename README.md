@@ -44,7 +44,7 @@ Add this package to your build requires:
 
 ```toml
 [build-system]
-requires = [ "setuptools >= 45", "setuptools-generate",]
+requires = [ "setuptools-generate",]
 build-backend = "setuptools.build_meta"
 
 [project]
