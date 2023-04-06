@@ -51,6 +51,9 @@ dependencies = { file = "requirements.txt" }
 file = "requirements/dev.txt"
 # end: scripts/update-pyproject.toml.pl
 
+[tool.mdformat]
+number = true
+
 [tool.black]
 line-length = 79
 

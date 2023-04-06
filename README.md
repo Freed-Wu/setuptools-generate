@@ -44,7 +44,7 @@ Add this package to your build requires:
 
 ```toml
 [build-system]
-requires = [ "setuptools-generate",]
+requires = [ "setuptools-generate >= 0.0.6",]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -53,6 +53,13 @@ version = "0.0.1"
 
 [project.scripts]
 demo = "demo:main"
+
+[tool.setuptools.data-files]
+"share/application" = [ "assets/desktop/demo.desktop",]
+"share/icons/hicolor/256x256/apps" = [ "src/demo/assets/images/demo.png",]
+"share/man/man1" = [ "sdist/demo.1",]
+"share/bash-completion/completions" = [ "sdist/demo",]
+"share/zsh/site-functions" = [ "sdist/_demo",]
 ```
 
 Build your package:
@@ -61,25 +68,60 @@ Build your package:
 python -m build
 ```
 
-See your `sdist`:
-
 ```console
 $ tree sdist
  sdist
 ├──  _demo  # zsh completion script
 ├──  demo  # bash completion script
-├──  demo-0.0.1-py3-none-any.whl  # wheel file
-├──  demo-0.0.1.tar.gz  # source distribution file
 ├──  demo.1  # man page
 └──  demo.fish  # fish completion script
+$ tree dist
+ dist
+├──  demo-0.0.1-py3-none-any.whl  # wheel file
+└──  demo-0.0.1.tar.gz  # source distribution file
 ```
 
 You got them.
+
+Now `pip install --prefix=/the/root/of/usr dist/*.whl`, you will see:
+
+```sh
+$ tree /the/root/of/usr
+ /the/root/of/usr
+├──  bin
+│   └──  trans
+├──  lib
+│   └──  python3.10
+│       └──  site-packages
+│           ├──  foo
+│           │   └── ...
+│           └──  foo-0.0.1.dist-info
+│               └── ...
+└──  share
+~   ├──  application
+~   │   └──  foo.desktop
+~   ├──  bash-completion
+~   │   └──  completions
+~   │       └──  foo
+~   ├──  icons
+~   │   └──  hicolor
+~   │       └──  256x256
+~   │           └──  apps
+~   │               └──  foo.png
+~   ├──  man
+~   │   └──  man1
+~   │       └──  foo.1
+~   └──  zsh
+~       └──  site-functions
+~           └──  _foo
+```
+
+For linux package (`deb`, `rpm`, `pkg.zst`, ...), it will be very easy.
 
 Example projects:
 
 - [demo for click](https://github.com/Freed-Wu/setuptools-generate/tree/main/tests/click/src)
 - [demo for shtab](https://github.com/Freed-Wu/setuptools-generate/tree/main/tests/shtab/src)
-- [translate-shell](https://github.com/Freed-Wu/translate-shell)
+- [translate-shell](https://github.com/Freed-Wu/translate-shell): see its installation.
 
 See [document](https://setuptools-generate.readthedocs.io) to know more.

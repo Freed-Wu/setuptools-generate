@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="0.0.6"></a>
+## 0.0.6 (2023-04-05)
+
+### Fixed
+
+- 🐛 Change build/resources to sdist [[eceea56](https://github.com/Freed-Wu/setuptools-generate/commit/eceea566011e3b083f05d550209cf2e2115912fd)]
+
+
 <a name="0.0.5"></a>
 ## 0.0.5 (2023-04-05)
 
