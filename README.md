@@ -122,6 +122,6 @@ Example projects:
 
 - [demo for click](https://github.com/Freed-Wu/setuptools-generate/tree/main/tests/click/src)
 - [demo for shtab](https://github.com/Freed-Wu/setuptools-generate/tree/main/tests/shtab/src)
-- [translate-shell](https://github.com/Freed-Wu/translate-shell): see its installation.
+- See more on [wiki](https://github.com/Freed-Wu/setuptools-generate/wiki).
 
 See [document](https://setuptools-generate.readthedocs.io) to know more.
