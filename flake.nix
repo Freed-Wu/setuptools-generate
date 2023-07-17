@@ -11,8 +11,7 @@
         {
           formatter = nixpkgs-fmt;
           packages.default = buildPythonApplication rec {
-            pname = "setuptools-generate";
-            version = "";
+            name = "setuptools-generate";
             src = self;
             format = "pyproject";
             disabled = pythonOlder "3.6";
