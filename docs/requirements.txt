@@ -2,5 +2,6 @@
 
 -e .
 myst-parser
-sphinxcontrib-eval
-tomli
+sphinxcontrib-autofile
+sphinxcontrib-requirements-txt
+tomli >= 1.0.0; python_version < '3.11'
