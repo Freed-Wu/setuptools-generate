@@ -1,4 +1,5 @@
 """Test click."""
+
 import click
 
 

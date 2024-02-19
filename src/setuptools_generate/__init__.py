@@ -1,11 +1,12 @@
 """Provide ``__version__`` for
 `importlib.metadata.version() <https://docs.python.org/3/library/importlib.metadata.html#distribution-versions>`_.
 """
+
 import logging
 import os
 import sys
+from collections.abc import Callable
 from importlib import import_module
-from typing import Callable
 
 from click import BaseCommand
 from setuptools import Distribution

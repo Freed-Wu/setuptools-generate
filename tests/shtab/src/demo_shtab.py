@@ -1,4 +1,5 @@
 """Test shtab."""
+
 from argparse import ArgumentParser
 
 import shtab

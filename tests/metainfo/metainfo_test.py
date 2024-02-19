@@ -1,11 +1,11 @@
 """Test metainfo."""
+
 import os
 import shutil
 from datetime import datetime
 from pathlib import Path
 
 import pytest
-
 from setuptools_generate import generate  # type: ignore
 
 now = datetime.now
@@ -37,7 +37,7 @@ class Test:
         """
         os.chdir(tmp_path)
         copy("empty/pyproject.toml")
-        with pytest.raises(Exception):
+        with pytest.raises(Exception):  # noqa: B017
             generate()
         assert caplog.records[-1].message == "Undefind error!"
 

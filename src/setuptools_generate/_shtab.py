@@ -1,10 +1,11 @@
 """shtab
 ========
 """
+
 import logging
 import os
 import sys
-from typing import Callable
+from collections.abc import Callable
 
 from .utils import get_stdout
 

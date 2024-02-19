@@ -1,9 +1,10 @@
 """Utilities
 ============
 """
+
 import io
+from collections.abc import Callable
 from contextlib import redirect_stdout, suppress
-from typing import Callable
 
 
 def get_stdout(function: Callable) -> str:

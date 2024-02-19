@@ -1,11 +1,11 @@
 """Test click."""
+
 import os
 import shutil
 import sys
 from pathlib import Path
 
 import pytest
-
 from setuptools_generate import generate  # type: ignore
 
 HERE = os.path.dirname(__file__)
