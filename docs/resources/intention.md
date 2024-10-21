@@ -136,6 +136,7 @@ program should be designed carefully.
 ```python
 #!/usr/bin/env python
 """A template for ``__main__.py``."""
+
 from argparse import ArgumentParser
 from contextlib import suppress
 
